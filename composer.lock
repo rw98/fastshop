@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "40b9180ac770c78a0293be98a9e0775e",
+    "content-hash": "7fc799aaed37810d38221c1ca99df525",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3449,6 +3449,72 @@
                 "source": "https://github.com/bobthecow/psysh/tree/v0.12.4"
             },
             "time": "2024-06-10T01:18:23+00:00"
+        },
+        {
+            "name": "r-emote/x-invoice",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "/Users/richardweser/workspace/x-invoice",
+                "reference": "7562393fce0440fc21eeef34838b39dc1142ac63"
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "ext-simplexml": "*",
+                "ext-xmlwriter": "*",
+                "ext-xsl": "*",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "ext-zip": "*",
+                "orchestra/testbench": "^8.0",
+                "pestphp/pest": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Remote\\Xinvoice\\": "src/lib/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "scripts": {
+                "map:output": [
+                    "php src/resources/scripts/processOutput.php"
+                ],
+                "validate:invoice": [
+                    "php src/resources/scripts/validateFile.php"
+                ],
+                "check:java": [
+                    "php src/resources/scripts/postInstall.php"
+                ],
+                "validator:fresh-install": [
+                    "php src/resources/scripts/postInstall.php"
+                ],
+                "validator:install": [
+                    "php src/resources/scripts/downloadValidator.php"
+                ],
+                "validator:prune": [
+                    "php src/resources/scripts/pruneValidator.php"
+                ]
+            },
+            "license": [
+                "BSD"
+            ],
+            "authors": [
+                {
+                    "name": "richardweser",
+                    "email": "richard.weser@devront.com"
+                }
+            ],
+            "description": "A package for creating invoices for ubl,cii and zugferd invoices",
+            "transport-options": {
+                "relative": false
+            }
         },
         {
             "name": "ralouphie/getallheaders",
@@ -9330,7 +9396,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "r-emote/x-invoice": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
